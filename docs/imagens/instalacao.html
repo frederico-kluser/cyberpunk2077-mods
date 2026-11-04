@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1600px; height: 600px; overflow: hidden; padding: 56px 72px;
+    background: radial-gradient(circle at 50% 0%, rgba(0,240,255,.16), transparent 55%), #0b0b10;
+    font-family: "Segoe UI", Arial, sans-serif; color: #efe9d8;
+  }
+  h2 { font-size: 30px; letter-spacing: 1px; text-transform: uppercase; color: #fcee0a; margin-bottom: 6px; }
+  .lead { color: #9a9488; font-size: 18px; margin-bottom: 40px; }
+  .steps { display: flex; gap: 28px; }
+  .step {
+    flex: 1; border: 1px solid rgba(252,238,10,.28); background: linear-gradient(180deg, rgba(252,238,10,.06), rgba(0,0,0,0));
+    padding: 28px 26px 32px; position: relative; border-radius: 6px;
+  }
+  .num {
+    font-family: Consolas, monospace; font-size: 15px; color: #0b0b10; background: #fcee0a;
+    width: 34px; height: 34px; display: grid; place-items: center; font-weight: 700; margin-bottom: 18px;
+  }
+  h3 { font-size: 24px; margin-bottom: 10px; }
+  p { color: #b9b3a5; font-size: 17px; line-height: 1.45; }
+  code { font-family: Consolas, monospace; background: rgba(0,240,255,.12); color: #9fe9ff; padding: 2px 7px; border-radius: 4px; font-size: 15px; }
+  .arrow { align-self: center; color: #ff003c; font-size: 34px; }
+  .note { margin-top: 40px; display: flex; gap: 16px; align-items: flex-start; border-left: 4px solid #ff003c; padding: 14px 18px; background: rgba(255,0,60,.08); color: #ffd9e2; font-size: 17px; }
+</style>
+</head>
+<body>
+  <h2>Instalar em 3 passos</h2>
+  <p class="lead">O zip já traz o mod, o NetSites (dependência) e a ponte LogSentry. Não é preciso clonar nada.</p>
+  <div class="steps">
+    <div class="step">
+      <div class="num">1</div>
+      <h3>Baixar</h3>
+      <p>Em <b>Releases</b>, baixa <code>MissionReset-0.2.1-installer.zip</code>. É o ficheiro do instalador.</p>
+    </div>
+    <div class="arrow">→</div>
+    <div class="step">
+      <div class="num">2</div>
+      <h3>Extrair</h3>
+      <p>Extrai <b>o zip inteiro</b> para uma pasta qualquer (ex.: <code>Downloads\MissionReset</code>). Nada de abrir o zip por dentro.</p>
+    </div>
+    <div class="arrow">→</div>
+    <div class="step">
+      <div class="num">3</div>
+      <h3>Instalar</h3>
+      <p>Windows: <b>duplo clique em <code>install.cmd</code></b>. Linux/Deck: <code>./install.sh</code>.</p>
+    </div>
+  </div>
+  <div class="note">
+    <span>⚠</span>
+    <span>Com o jogo fechado. O instalador acha a pasta do Cyberpunk 2077 sozinho e avisa se faltar o CET, o redscript ou o Codeware — com o link de cada um.</span>
+  </div>
+</body>
+</html>

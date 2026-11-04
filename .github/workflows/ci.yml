@@ -1,0 +1,55 @@
+# =============================================================================
+# CI — cyberpunk2077-mods-public
+#
+# Este repositório não tem código executável para testar: o que se verifica é que
+# o que o jogador lê está coerente (ficheiros obrigatórios, imagens, links de
+# release) e que o JSON do repositório é válido. O job `build` é o check
+# obrigatório do ruleset da `main`.
+# =============================================================================
+
+name: CI
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  docs:
+    name: docs
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - name: Ficheiros e imagens obrigatórios
+        run: |
+          set -e
+          for f in README.md LICENSE CHANGELOG.md CONTRIBUTING.md SECURITY.md CODEOWNERS \
+                   docs/imagens/banner.png docs/imagens/instalacao.png docs/imagens/console.png; do
+            test -s "$f" || { echo "::error file=$f::falta ou está vazio"; exit 1; }
+          done
+      - name: O README aponta para as Releases e para o zip
+        run: |
+          set -e
+          grep -q '/releases/latest' README.md
+          grep -q 'MissionReset-.*-installer.zip' README.md
+          grep -q 'install.cmd' README.md
+      - name: JSON válido
+        run: |
+          set -e
+          for f in $(git ls-files '*.json'); do python3 -m json.tool "$f" > /dev/null || exit 1; done
+
+  build:
+    name: build
+    needs: [docs]
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - run: echo "docs OK — o ruleset exige este check"
