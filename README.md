@@ -111,7 +111,7 @@ Requires Cyberpunk 2077 2.5, Cyber Engine Tweaks ≥ 1.38 and redscript ≥ 0.5.
 
 ## Por dentro
 
-O mod é um sistema Lua no CET (o motor do reset) mais uma tabela de missões gerada dos ficheiros do próprio jogo, com o site desenhado pelo **NetSites** e cada passo provado no jogo pela ponte **LogSentry**. O código-fonte vive num repositório privado; **este repositório público é o sítio do jogador**: instruções, imagens e os instaladores nas Releases.
+O mod é um sistema Lua no CET (o motor do reset) mais uma tabela de missões gerada dos ficheiros do próprio jogo, com o site desenhado pelo **NetSites** e cada passo provado no jogo pela ponte **LogSentry**. Este repositório é o sítio do jogador: instruções, imagens e os instaladores nas Releases.
 
 - 📝 Post com os detalhes: [Mission Reset: reponha missões no Cyberpunk 2077](https://frederico-kluser.com/pt-br/blog/mission-reset-repor-missoes-cyberpunk-2077/)
 - 🐞 Encontraste um problema? [Abre uma issue](https://github.com/frederico-kluser/cyberpunk2077-mods-public/issues)
